@@ -1,0 +1,105 @@
+.boxHeader {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  top: 0;
+  height: 70px;
+  background-color: #1a1a1a;
+  box-sizing: border-box;
+  -webkit-box-shadow: 0 17px 59px 11px rgba(100, 100, 100, 0.62);
+  -moz-box-shadow: 0 17px 59px 11px rgba(100, 100, 100, 0.62);
+  box-shadow: 0 17px 59px 11px rgba(100, 100, 100, 0.62);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  .boxLogo {
+    width: 200px;
+    margin-left: 0.8rem;
+    transition: transform 0.4s ease;
+    &:hover {
+      transform: rotateY(15deg) rotateX(10deg) scale(1.05);
+    }
+  }
+
+  .navegacion {
+    ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      margin: 0 2rem;
+      padding: 0;
+      li {
+        a {
+          color: white;
+          font-size: 1rem;
+          font-weight: bold;
+          font-family: "Parkinsans", sans-serif;
+          text-decoration: none;
+          transition: 0.3s;
+          &:hover {
+            background-color: rgba(180, 180, 180, 0.36);
+            box-shadow: 0 0 400px 86px #ccc;
+            -webkit-box-shadow: 0 0 400px 86px #cccccc;
+            -moz-box-shadow: 0 0 400px 86px #ccc;
+            text-decoration: underline white;
+          }
+        }
+      }
+    }
+  }
+  .abrirBurger,
+  .cerrarBurger {
+    display: none;
+  }
+  .abrirBurger.oculto {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .boxHeader {
+    .boxLogo {
+      margin-left: 0.2rem;
+    }
+
+    .abrirBurger,
+    .cerrarBurger {
+      display: block;
+      border: 0;
+      font-size: 1.25rem;
+      background-color: transparent;
+      cursor: pointer;
+      color: #ccc;
+    }
+
+    .navegacion {
+      opacity: 0;
+      visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      gap: 1rem;
+      position: absolute;
+      margin: 0;
+      padding: 0;
+      top: 0;
+      right: 0;
+      padding: 1.5rem 2rem;
+      background-color: rgba(26, 26, 26, 0.9);
+      width: 35%;
+      height: 100vh;
+      box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease;
+      z-index: 2;
+      &.visible {
+        opacity: 1;
+        visibility: visible;
+      }
+      ul {
+        flex-direction: column;
+        align-items: end;
+      }
+    }
+  }
+}

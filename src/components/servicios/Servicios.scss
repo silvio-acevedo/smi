@@ -1,0 +1,94 @@
+.boxServicios {
+  position: absolute;
+  background-color: whitesmoke;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  .carrousel {
+    // border: 2px solid yellow;
+
+    position: relative;
+    margin-top: 3rem;
+    width: 60vw;
+    height: 65vh;
+
+    border-radius: 20px;
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.5), 10px 0 10px rgba(0, 0, 0, 0.5);
+
+    overflow: hidden;
+    .slide {
+      // border: 2px solid red;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      opacity: 0;
+      transition: opacity 1s ease;
+      pointer-events: none;
+      &.activo {
+        opacity: 1;
+        pointer-events: auto;
+        z-index: 1;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .boxSlide {
+        // border: 2px solid rgb(47, 255, 57);
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 20vh;
+        padding: 0.5rem 3rem;
+
+        background-color: rgba(0, 0, 0, 0.5);
+        color: whitesmoke;
+
+        font-family: "Parkinsans", sans-serif;
+        h2 {
+          font-size: 1.8rem;
+          // padding: 0.5rem;
+          margin: 0;
+          text-align: center;
+        }
+        p {
+          font-size: 1rem;
+          padding: 0.5rem;
+          text-align: center;
+          justify-items: center;
+        }
+      }
+    }
+  }
+  .indicadores {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 2;
+    .punto {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      &.activo {
+        background-color: black;
+        width: 30px;
+        border-radius: 6px;
+      }
+    }
+  }
+}
